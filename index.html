@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karthick's Influence Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:wght@600;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE everyday-personal: a field manual written to my future self, direct and specific
+   IDEA an annual report on one asset (me), led by my Leverage Inventory as the cover chart
+   PICTURE a 12-spoke influence radar I can re-score, split into Smart / Hard / Soft power fields
+   COLOUR white, black, vermilion #ff4a1c for the gap that matters; night vermilion on #120d0b
+   TYPE Sofia Sans Condensed 800 + Instrument Sans
+   LAYOUT laptop: title + core message left, radar right with sliders; phone: title, radar, sliders */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#120d0b);--ink:light-dark(#111111,#f3ede9);--mute:light-dark(#5b5552,#b4aaa4);--line:light-dark(#e3dedb,#3a2e29);--red:#ff4a1c;--panel:light-dark(#f6f3f1,#1d1512);--smart:light-dark(#111111,#f3ede9);--hard:light-dark(#8a8481,#8f857f);--soft:#ff4a1c}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Instrument Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Sofia Sans Condensed","Arial Narrow",sans-serif;font-weight:800;line-height:1.05;letter-spacing:-.02em;text-wrap:balance;margin:0}
+h1{font-size:clamp(38px,5.4vw,60px)}
+h2{font-size:clamp(30px,3.6vw,44px);margin-bottom:14px}
+h3{font-size:24px;margin-bottom:6px}
+p{margin:0 0 12px;max-width:68ch}
+a{color:inherit}
+.band{padding-block:clamp(28px,4vw,64px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .scroll{display:flex;gap:6px;max-width:1240px;margin:0 auto;padding:8px max(5vw,16px);overflow-x:auto}
+nav a{flex:none;text-decoration:none;padding:8px 12px;border-radius:999px;font-weight:500;font-size:15px}
+nav a:hover,nav a:focus-visible{background:var(--panel)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,56px);align-items:start}
+.core{background:var(--red);color:#fff;padding:20px 22px;margin:22px 0 16px;font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;font-size:clamp(26px,3vw,34px);line-height:1.08}
+.lede{font-size:17px}
+.mute{color:var(--mute)}
+.small{font-size:14px}
+.fig{position:relative;min-height:440px}
+.fig>svg{position:absolute;inset:0;width:100%;height:100%}
+svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font-family:"Instrument Sans",sans-serif;font-size:14px;fill:var(--ink)}
+.styleline{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin:6px 0 10px}
+.styleline b{font-family:"Sofia Sans Condensed",sans-serif;font-size:30px;font-weight:800}
+.powers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:10px}
+.pw{border-top:4px solid;padding-top:6px}
+.pw span{display:block;font-size:14px;color:var(--mute)}
+.pw strong{font-size:26px;font-family:"Sofia Sans Condensed",sans-serif}
+details.tune{background:var(--panel);padding:10px 14px;border-radius:6px}
+details.tune summary{cursor:pointer;font-weight:600;min-height:32px;display:flex;align-items:center}
+.sliders{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;margin-top:8px}
+.sl{display:grid;grid-template-columns:7.5em minmax(0,1fr) 2.2em;align-items:center;gap:8px;font-size:15px}
+.sl output{text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;height:32px;accent-color:var(--red)}
+button{font:inherit;font-weight:600;min-height:44px;padding:8px 16px;border-radius:6px;border:1.5px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+button:hover{background:var(--panel)}
+button:focus-visible,input:focus-visible,textarea:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+button.on{background:var(--ink);color:var(--bg)}
+.dark{background:#111;color:#f3ede9}
+:root[data-theme=dark] .dark{background:#1d1512}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px)}
+.gapbars .row{display:grid;grid-template-columns:8.5em minmax(0,1fr) 2.4em;gap:10px;align-items:center;margin:7px 0;font-size:15px}
+.bar{height:18px;background:color-mix(in srgb,currentColor 12%,transparent);position:relative}
+.bar i{position:absolute;inset:0 auto 0 0;background:currentColor}
+.bar.lo i{background:var(--red)}
+.gapbars .row span:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.quote{border-left:4px solid var(--red);padding-left:14px;font-size:17px;margin:16px 0}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px 10px 0;border-bottom:1px solid var(--line)}
+th{font-weight:600;color:var(--mute);font-size:14px}
+td:first-child{font-weight:600;white-space:nowrap}
+tr.grp td{border-bottom:2px solid var(--ink);padding-top:22px;font-family:"Sofia Sans Condensed",sans-serif;font-size:24px;font-weight:800}
+tr.weak td:first-child{color:var(--red)}
+.tag{display:inline-block;font-size:13px;padding:1px 8px;border-radius:999px;background:var(--panel);margin:2px 4px 0 0;white-space:nowrap}
+.sits{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.card{background:var(--panel);padding:20px 22px;border-radius:6px}
+.card ol,.card ul{margin:8px 0 0;padding-left:20px}
+.card li{margin-bottom:6px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.num{font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1;color:var(--red)}
+.weeks{display:grid;grid-template-columns:8em repeat(12,minmax(0,1fr));gap:4px;align-items:center;font-size:14px}
+.weeks .h{text-align:center;color:var(--mute)}
+.cell{aspect-ratio:1;min-height:26px;border:1.5px solid var(--line);background:transparent;padding:0;min-width:0;border-radius:3px}
+.cell.on{background:var(--red);border-color:var(--red)}
+.log{display:grid;gap:12px}
+.log label{font-weight:600;font-size:15px;display:block;margin-bottom:4px}
+textarea{width:100%;font:16px/1.5 "Instrument Sans",sans-serif;padding:10px 12px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);min-height:70px;resize:vertical}
+.sig{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:16px}
+.sig input{width:100%;font:16px "Instrument Sans",sans-serif;padding:10px 12px;border:none;border-bottom:1.5px solid var(--ink);background:transparent;color:var(--ink)}
+.rule{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.rule .k{font-family:"Sofia Sans Condensed",sans-serif;font-weight:800;font-size:22px;color:var(--red);min-width:2.2em}
+footer{border-top:1px solid var(--line)}
+@media(max-width:900px){.hero,.two{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.grid3,.grid4,.sliders,.sig{grid-template-columns:minmax(0,1fr)}.fig{min-height:360px}table{font-size:14px}.stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-bottom:1px solid var(--line)}.stack td{border:0;padding:3px 0;white-space:normal}.stack td::before{content:attr(data-l);display:block;font-size:13px;color:var(--mute);font-weight:500}.stack td:first-child::before{display:none}.stack tr.grp td::before{display:none}.weeks{grid-template-columns:5.5em repeat(12,minmax(0,1fr));gap:2px;font-size:13px}.cell{min-height:18px}}
+@media(prefers-reduced-motion:no-preference){#poly{transition:opacity .3s}}
+</style>
+</head>
+<body>
+<nav><div class="scroll">
+<a href="#me">Me now</a><a href="#gap">The pattern</a><a href="#tools">12 tools</a><a href="#now">Which tool now?</a><a href="#lines">My lines</a><a href="#commit">Commitments</a><a href="#proof">Proof of action</a>
+</div></nav>
+
+<header class="band" id="me"><div class="wrap hero">
+ <div>
+  <p class="mute small">MGTA 459 Managerial Decision Making · Final project · a letter to future Karthick</p>
+  <h1>The data gets me in the room. People get me the job.</h1>
+  <div class="core">Lead with people. Keep the spreadsheet behind me.</div>
+  <p class="lede">At Infosys I got promoted because my analysis was right. My next role will depend on who knows me, who vouches for me, and whether my story sticks.</p>
+  <p class="lede">My Leverage Inventory style is Analyst–Tin Man: I lean most on smart power and least on soft power. The chart shows my own ratings of the 12 tools.</p>
+ </div>
+ <div>
+  <div class="styleline"><span class="mute">My Leverage Inventory style:</span><b>Analyst – Tin Man</b></div>
+  <div class="powers">
+   <div class="pw" style="border-color:var(--smart)"><span>Smart power</span><strong id="pSmart">3.3</strong></div>
+   <div class="pw" style="border-color:var(--hard)"><span>Hard power</span><strong id="pHard">3.2</strong></div>
+   <div class="pw" style="border-color:var(--soft)"><span>Soft power</span><strong id="pSoft">2.6</strong></div>
+  </div>
+  <div class="fig" id="radarBox"><svg id="radar" role="img" aria-label="Radar chart of 12 influence tools"></svg></div>
+  <details class="tune"><summary>My self-ratings (1 = rarely, 4 = almost always)</summary>
+   <div class="sliders" id="sliders"></div>
+   <p class="small mute" style="margin-top:8px">Self-ratings, re-scored at weeks 4, 8 and 12. <button id="resetBtn" type="button" style="min-height:36px;padding:4px 12px;margin-left:6px">Reset to class self-read</button></p>
+  </details>
+ </div>
+</div></header>
+
+<section class="band dark" id="gap"><div class="wrap two">
+ <div>
+  <h2>The pattern: every tool I'm weakest at is a two-way tool</h2>
+  <p>Logic, assertiveness and inspiration are all things I send out. Networks, coalitions, exchange and allocentrism all ask me to listen first, give first, and build support before I need it.</p>
+  <p>My strengths win the interview. My gaps decide whether I get the interview at all.</p>
+ </div>
+ <div class="gapbars" id="gapbars" aria-label="Tools ranked from strongest to weakest"></div>
+</div></section>
+
+<section class="band" id="tools"><div class="wrap">
+ <h2>12 tools, one move each</h2>
+ <p>Red names are the tools I'm developing.</p>
+ <div class="scroll"><table class="stack">
+  <thead><tr><th>Tool</th><th>My move</th></tr></thead>
+  <tbody id="toolRows"></tbody>
+ </table></div>
+</div></section>
+
+<section class="band" style="background:var(--panel)" id="now"><div class="wrap">
+ <h2>Which tool now?</h2>
+ <p>Pick the situation I'm in.</p>
+ <div class="sits" id="sits" role="tablist"></div>
+ <div class="two">
+  <div class="card" style="background:var(--bg)" id="sitPlay"></div>
+  <div class="card" style="background:var(--bg)" id="sitAvoid"></div>
+ </div>
+</div></section>
+
+<section class="band" id="lines"><div class="wrap two">
+ <div>
+  <h2>My lines</h2>
+  <p>Influence, not manipulation. My credibility as an analyst is the thing I can least afford to lose.</p>
+ </div>
+ <div>
+  <div class="rule"><span class="k">1</span><div><b>Full baseline, always.</b> I show the most valid comparison first. If a flattering cut is also true, it goes second and is labeled as such.</div></div>
+  <div class="rule"><span class="k">2</span><div><b>Only real leverage.</b> In negotiation I cite offers and processes I'd genuinely consider. My third way is to bring market data, my best stories, and a specific ask.</div></div>
+  <div class="rule"><span class="k">3</span><div><b>Say it out loud first.</b> If I'd be uncomfortable explaining a move to someone else, I don't make it.</div></div>
+  <div class="rule"><span class="k">4</span><div><b>Push only as hard as needed.</b> Start cooperative, hold my boundaries, then return to normal.</div></div>
+ </div>
+</div></section>
+
+<section class="band dark" id="commit"><div class="wrap">
+ <h2>Commitments: habits, not intentions</h2>
+ <p style="max-width:78ch">A missed week counts as a loss, not a pause. I can adjust a number by 10% at a check-in. I can't drop a row.</p>
+ <div class="grid4" style="margin:24px 0">
+  <div><div class="num">3</div><p><b>new contacts a week</b> outside data analytics.</p></div>
+  <div><div class="num">1</div><p><b>give-first act a week:</b> an intro, a quick analysis, a referral. Nothing asked back.</p></div>
+  <div><div class="num">2</div><p><b>questions before any pitch</b> in every conversation.</p></div>
+  <div><div class="num">5</div><p><b>stories ready,</b> each with one number and one person.</p></div>
+ </div>
+ <h3>12-week tracker</h3>
+ <p class="small" style="color:#b4aaa4">Tap a cell when the habit is done that week. Review every Sunday evening.</p>
+ <div class="weeks" id="weeks"></div>
+</div></section>
+
+<section class="band" id="proof"><div class="wrap two">
+ <div>
+  <h2>Proof of action: done before I hit send</h2>
+  <div class="log">
+   <div><label>Messages sent, week of November 21</label>
+    <div class="rule"><span class="k">1</span><div><b>Aman Sareen, CEO of RZR Global.</b> The commercial side of lead quality: how decisions get made when the data is ambiguous.</div></div>
+    <div class="rule"><span class="k">2</span><div><b>Namratha, classmate in e-commerce and merchandising.</b> How she approaches a brief when the answer isn't in the data yet.</div></div>
+    <div class="rule"><span class="k">3</span><div><b>Sanskriti, Rady alum.</b> How the work after the program differs from what it prepares you for.</div></div>
+    <p class="small mute" style="margin-top:8px">Each asked for 15–20 minutes to learn, not for a job.</p></div>
+   <div><label>Give-first act</label>
+    <p>I introduced Namratha, a classmate targeting e-commerce and marketing analytics roles, to a contact on the marketing side of an ad tech company. She gets a conversation in the industry she's aiming at. I asked for nothing and I'm not involved in what comes of it.</p></div>
+   <div><label>First story: the apology that stopped</label>
+    <p>At Infosys, pacing across 20+ advertiser campaigns was checked weekly. Problems surfaced when the flight was nearly over, with no runway left to fix delivery. I built automated daily pacing checks in Python and PostgreSQL that flagged any line drifting off plan.</p>
+    <p>Missed pacing issues fell 30%. The real change was for the campaign manager who had to explain missed delivery to the client: she started getting the flag while there was still budget and time to shift. <b>She stopped opening client conversations with an apology.</b></p></div>
+  </div>
+ </div>
+ <div class="card">
+  <h3>My commitment contract</h3>
+  <p>I, Karthick, commit to the four weekly habits above for 12 weeks, starting the week this project is submitted. I'll re-score my chart at weeks 4, 8 and 12.</p>
+  <div class="sig">
+   <div><label class="small mute" for="sigName">Signed</label><input id="sigName" value="Karthick"></div>
+   <div><label class="small mute" for="sigDate">Date</label><input id="sigDate" value="November 2026"></div>
+  </div>
+  <p style="margin-top:16px"><button id="copyBtn" type="button">Copy my commitments</button> <span id="copyMsg" class="small mute" role="status"></span></p>
+ </div>
+</div></section>
+
+<footer class="band"><div class="wrap"><p><b>Twelve weeks, twelve different weeks.</b> Small gains compound.</p></div></footer>
+
+<script>
+{
+const TOOLS=[
+ {k:'logos',n:'Logos',g:'smart',d:3.6,m:'One-sentence point first. Data backs it up.'},
+ {k:'agency',n:'Agency',g:'smart',d:3.4,m:'Pitch a project, not just apply to a posting.'},
+ {k:'sa',n:'Situation awareness',g:'smart',d:3.0,m:'Ask: what does this person need right now?'},
+ {k:'intent',n:'Intentionality',g:'smart',d:3.2,m:'15 target companies. No mass applying.'},
+ {k:'might',n:'Might',g:'hard',d:3.4,m:'Negotiate the offer, firmly and politely.'},
+ {k:'ethos',n:'Ethos',g:'hard',d:3.0,m:'Lead with my Infosys promotion and results.'},
+ {k:'pathos',n:'Pathos',g:'soft',d:3.4,m:'Tell stories, show a visual instead of a table.'},
+ {k:'team',n:'Team-building',g:'soft',d:3.4,m:'Credit the team, bring in quiet members.'},
+ {k:'allo',n:'Allocentrism',g:'soft',d:2.4,m:'Two questions before any pitch.',weak:1},
+ {k:'exchange',n:'Exchange',g:'soft',d:2.2,m:'Give first, every week.',weak:1},
+ {k:'net',n:'Networks',g:'soft',d:2.0,m:'Three new contacts a week, sideways not just up.',weak:1},
+ {k:'coal',n:'Coalitions',g:'soft',d:2.2,m:'Find an inside champion before applying.',weak:1}
+];
+const G={smart:{n:'Smart',c:'var(--smart)',most:'Analyst',least:'Scarecrow'},hard:{n:'Hard',c:'var(--hard)',most:'Hammer',least:'Lion'},soft:{n:'Soft',c:'var(--soft)',most:'Buddy',least:'Tin Man'}};
+let S={};
+const KEY='kr-mdm-playbook';
+let store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){store={}}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}};
+TOOLS.forEach(t=>S[t.k]=(store.s&&store.s[t.k])||t.d);
+
+const sl=document.getElementById('sliders');
+sl.innerHTML=TOOLS.map(t=>`<label class="sl" for="r-${t.k}"><span>${t.n}</span><input type="range" id="r-${t.k}" min="1" max="4" step="0.1" value="${S[t.k]}"><output id="o-${t.k}">${S[t.k].toFixed(1)}</output></label>`).join('');
+const svg=document.getElementById('radar');
+const avg=g=>{const a=TOOLS.filter(t=>t.g===g);return a.reduce((s,t)=>s+S[t.k],0)/a.length};
+function draw(){
+ const W=svg.clientWidth,H=svg.clientHeight;if(!W||!H)return;
+ const small=W<520,m=small?62:92,R=Math.max(60,Math.min(W/2-m,H/2-34)),cx=W/2,cy=H/2,n=TOOLS.length;
+ const ang=i=>-Math.PI/2+(i+.5)*2*Math.PI/n;
+ const pt=(i,v)=>[cx+Math.cos(ang(i))*R*v/4,cy+Math.sin(ang(i))*R*v/4];
+ let h='';
+ ['smart','hard','soft'].forEach(g=>{
+  const idx=TOOLS.map((t,i)=>t.g===g?i:-1).filter(i=>i>=0);
+  const a0=-Math.PI/2+idx[0]*2*Math.PI/n,a1=-Math.PI/2+(idx[idx.length-1]+1)*2*Math.PI/n;
+  const big=(a1-a0)>Math.PI?1:0;
+  h+=`<path d="M${cx},${cy} L${cx+Math.cos(a0)*R},${cy+Math.sin(a0)*R} A${R},${R} 0 ${big} 1 ${cx+Math.cos(a1)*R},${cy+Math.sin(a1)*R} Z" fill="${G[g].c}" opacity=".08"/>`;
+  const am=(a0+a1)/2;
+ });
+ [1,2,3,4].forEach(v=>h+=`<circle cx="${cx}" cy="${cy}" r="${R*v/4}" fill="none" stroke="var(--line)"/>`);
+ TOOLS.forEach((t,i)=>{const [x,y]=pt(i,4);h+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="var(--line)"/>`});
+ const P=TOOLS.map((t,i)=>pt(i,S[t.k]).join(',')).join(' ');
+ h+=`<polygon id="poly" points="${P}" fill="var(--ink)" fill-opacity=".1" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round"/>`;
+ TOOLS.forEach((t,i)=>{const [x,y]=pt(i,S[t.k]);const lo=S[t.k]<2.6;h+=`<circle cx="${x}" cy="${y}" r="${lo?7:5}" fill="${lo?'var(--red)':'var(--ink)'}"/>`});
+ TOOLS.forEach((t,i)=>{const a=ang(i),x=cx+Math.cos(a)*(R+12),y=cy+Math.sin(a)*(R+12);const c=Math.cos(a);const anc=c>.25?'start':c<-.25?'end':'middle';const dy=Math.sin(a)>.5?14:Math.sin(a)<-.5?-4:5;let lab=small?t.n.replace('Situation awareness','Sit. aware.').replace('Team-building','Team').replace('Intentionality','Intent').replace('Allocentrism','Allocentr.'):t.n;h+=`<text x="${x}" y="${y+dy}" text-anchor="${anc}" ${S[t.k]<2.6?'style="fill:var(--red);font-weight:600"':''}>${lab}</text>`});
+ svg.innerHTML=h;
+}
+function update(){
+ const p={smart:avg('smart'),hard:avg('hard'),soft:avg('soft')};
+ document.getElementById('pSmart').textContent=p.smart.toFixed(1);
+ document.getElementById('pHard').textContent=p.hard.toFixed(1);
+ document.getElementById('pSoft').textContent=p.soft.toFixed(1);
+ const ord=Object.keys(p).sort((a,b)=>p[b]-p[a]);
+ const sorted=[...TOOLS].sort((a,b)=>S[b.k]-S[a.k]);
+ document.getElementById('gapbars').innerHTML='<h3 style="margin-bottom:10px">Strongest to weakest</h3>'+sorted.map(t=>`<div class="row"><span>${t.n}</span><div class="bar ${S[t.k]<2.6?'lo':''}"><i style="width:${(S[t.k]-1)/3*100}%"></i></div><span>${S[t.k].toFixed(1)}</span></div>`).join('')+'<p class="small" style="color:#b4aaa4;margin-top:10px">Red marks tools below 2.6 on the 1–4 scale.</p>';
+ draw();
+}
+TOOLS.forEach(t=>{const r=document.getElementById('r-'+t.k);r.addEventListener('input',()=>{S[t.k]=+r.value;document.getElementById('o-'+t.k).textContent=S[t.k].toFixed(1);store.s=S;save();update()})});
+document.getElementById('resetBtn').addEventListener('click',()=>{TOOLS.forEach(t=>{S[t.k]=t.d;document.getElementById('r-'+t.k).value=t.d;document.getElementById('o-'+t.k).textContent=t.d.toFixed(1)});store.s=S;save();update()});
+const ro=new ResizeObserver(draw);ro.observe(svg);
+
+const gl={smart:'Smart power',hard:'Hard power',soft:'Soft power'};
+let rows='',cur='';
+TOOLS.forEach(t=>{if(t.g!==cur){cur=t.g;rows+=`<tr class="grp"><td colspan="2">${gl[cur]}</td></tr>`}rows+=`<tr class="${t.weak?'weak':''}"><td>${t.n}</td><td data-l="My move">${t.m}</td></tr>`});
+document.getElementById('toolRows').innerHTML=rows;
+
+const SITS=[
+ {n:'Cold outreach',t:['Networks','Exchange','Ethos'],p:['Lead with a specific reason I picked them, not a generic ask.','Offer something useful first.','Ask for 15 minutes to learn, not for a job.'],x:['Opening with my resume.','Only messaging people senior to me. My cohort rises too.']},
+ {n:'Coffee chat',t:['Allocentrism','Pathos','Networks'],p:['Ask two questions before saying anything about myself.','Tell one Infosys story.','End by asking who else I should talk to, and if they want an intro to anyone I know.'],x:['Saying everything I know.','Leaving without a next step.']},
+ {n:'Before the interview',t:['Coalitions','Situation awareness','Intentionality'],p:['Talk to an insider about what the team struggles with.','Map who decides, who influences, and who will work with me.','Pick 3 stories that match their pain, and cut the rest.'],x:['Walking in cold.','Preparing answers about me instead of about their problem.']},
+ {n:'The interview',t:['Pathos','Logos','Ethos'],p:['Core first, then one concrete example, then the data behind it.','Bring a one-page visual of a past result.','Use "we" for team wins and "I" for my specific contribution. Credit honestly.'],x:['Walking through a spreadsheet out loud.','Being so assertive that I stop listening.']},
+ {n:'Offer negotiation',t:['Might','Exchange','Logos'],p:['Start cooperative, be clear about my number.','Use real benchmarks and real alternatives only.','Trade: if base salary is fixed, ask about the start date, learning budget, or a review at 6 months.'],x:['Inventing a competing offer.','Pushing harder than needed.']},
+ {n:'Rejection',t:['Agency','Networks','Intentionality'],p:['Thank them and ask for one piece of feedback.','Stay in touch: this person is now a weak tie.','Write down one lesson.'],x:['Going silent and passive.','Letting one no derail the weekly cadence.']},
+ {n:'First 90 days',t:['Team-building','Coalitions','Agency'],p:['Deliver one quick, visible win.','Join one cross-functional project.','Meet people before I need them, including in other functions.'],x:['Keeping my head down in the data.','Networking only within analytics.']}
+];
+const sits=document.getElementById('sits');
+sits.innerHTML=SITS.map((s,i)=>`<button type="button" role="tab" id="s${i}" aria-selected="false">${s.n}</button>`).join('');
+function pick(i){
+ SITS.forEach((s,j)=>{const b=document.getElementById('s'+j);b.classList.toggle('on',i===j);b.setAttribute('aria-selected',i===j)});
+ const s=SITS[i];
+ document.getElementById('sitPlay').innerHTML=`<h3>${s.n}: play these</h3><div>${s.t.map(x=>`<span class="tag">${x}</span>`).join('')}</div><ol>${s.p.map(x=>`<li>${x}</li>`).join('')}</ol>`;
+ document.getElementById('sitAvoid').innerHTML=`<h3>Watch for my default</h3><ul>${s.x.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+ store.sit=i;save();
+}
+SITS.forEach((s,i)=>document.getElementById('s'+i).addEventListener('click',()=>pick(i)));
+pick(typeof store.sit==='number'?store.sit:1);
+
+const HAB=['3 weak ties','1 give-first','2 Qs first','Story bank'];
+store.w=store.w||{};
+const wk=document.getElementById('weeks');
+let wh='<span></span>'+Array.from({length:12},(_,i)=>`<span class="h">${i+1}</span>`).join('');
+HAB.forEach((h,r)=>{wh+=`<span>${h}</span>`+Array.from({length:12},(_,c)=>{const id=r+'-'+c;return `<button type="button" class="cell ${store.w[id]?'on':''}" data-id="${id}" aria-pressed="${!!store.w[id]}" aria-label="${h}, week ${c+1}"></button>`}).join('')});
+wk.innerHTML=wh;
+wk.addEventListener('click',e=>{const b=e.target.closest('.cell');if(!b)return;const id=b.dataset.id;store.w[id]=!store.w[id];b.classList.toggle('on',store.w[id]);b.setAttribute('aria-pressed',store.w[id]);save()});
+
+['sigName','sigDate'].forEach(id=>{const el=document.getElementById(id);if(store[id])el.value=store[id];el.addEventListener('input',()=>{store[id]=el.value;save()})});
+document.getElementById('copyBtn').addEventListener('click',async()=>{
+ const txt=`My MDM commitments (12 weeks)\n- 3 new weak ties/week outside analytics\n- 1 give-first act/week\n- 2 questions before any pitch\n- 5-story bank, each with a number and a person\n\nDone already:\n- Messaged Aman Sareen (CEO, RZR Global), Namratha (classmate, merchandising), Sanskriti (Rady alum)\n- Introduced Namratha to an ad tech marketing contact, asked nothing back\n- Story bank: Infosys pacing checks, 30% fewer missed pacing issues\n\nSigned: ${document.getElementById('sigName').value}, ${document.getElementById('sigDate').value}`;
+ const msg=document.getElementById('copyMsg');
+ try{await navigator.clipboard.writeText(txt);msg.textContent='Copied.'}catch(e){msg.textContent='Copy was blocked here. Select the text manually.'}
+});
+update();
+}
+</script>
+</body>
+</html>
